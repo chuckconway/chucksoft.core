@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 
 namespace Chucksoft.Core.Cryptography
@@ -114,13 +115,9 @@ namespace Chucksoft.Core.Cryptography
             bool hexFormat = IsValidHexCharLength(hexString);
             if (hexFormat)
             {
-                foreach (char ch in hexString)
+                if (hexString.Any(ch => !IsHexChar(ch)))
                 {
-                    if (!IsHexChar(ch))
-                    {
-                        hexFormat = false;
-                        break;
-                    }
+                    hexFormat = false;
                 }
             }
             return hexFormat;

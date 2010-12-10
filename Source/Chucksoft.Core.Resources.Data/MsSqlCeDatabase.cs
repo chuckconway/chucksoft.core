@@ -1,4 +1,5 @@
-﻿using System.Data.SqlServerCe;
+﻿using System.Data;
+using System.Data.SqlServerCe;
 
 namespace Chucksoft.Core.Data
 {

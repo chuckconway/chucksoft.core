@@ -27,8 +27,12 @@ namespace Chucksoft.Core.Cryptography
         {
             _rand.GetBytes(_randb);
             int value = BitConverter.ToInt32(_randb, 0);
+
             value = value%(max + 1); // % calculates remainder
-            if (value < 0) value = -value;
+            if (value < 0)
+            {
+                value = -value;
+            }
             return value;
         }
 
